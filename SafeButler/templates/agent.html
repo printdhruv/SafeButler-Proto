@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent Dash Board</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body class="#263238 blue-grey darken-4">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+</script>
+
+<div class="valign-wrapper container" style="width:100%;height:100%;position: absolute;">
+    <div class="valign" style="width:100%;">
+        <div class="row">
+            <div class="col s12 m6 offset-m5 center">
+                <div class="card z-depth-5">
+                    <div class="card-content">
+                        <span class="card-title black-text">Welcome {{ username }}</span>
+                    </div>
+                    <div class="card-action z-depth-1">
+                        {% if len  < 2 %}
+                            {% if len == 0 %}
+                                You have no new message.
+                            {% else %}
+                                <a href="/showclients">You have {{ len }} new message.</a>
+                            {% endif %}
+                        {% else %}
+                            <a href="/showclients">You have {{ len }} new messages.</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

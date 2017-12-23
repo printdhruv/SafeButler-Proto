@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start a quote page</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+</head>
+<body bgcolor="black">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+</script>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $(".button-collapse").sideNav();//mobile screen menu init
+        $('.carousel').carousel(); //carousel init
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+        $(".call-btn").click(function () {
+            var start = new Date().getTime();
+            console.log(start);
+            $('.starttiming').val(start);
+        });
+    });
+
+</script>
+<div class="valign-wrapper container center-align" style="width:100%;position: absolute;">
+    <div class="valign" style="width:100%;">
+        <div class="row">
+            <div class="col s12 m6 offset-m5">
+                {% for key, value in data.items() %}
+                    <form>
+                        <ul class="collection with-header ">
+                            <li class="collection-item center #ffd600 yellow accent-4 ">
+                                <h4>{{ key|e }}</h4>
+                                <h6>Customer Name : {{ value[0].customer|e }}</h6>
+                                <h6>Address : {{ value[0].address|e }}</h6>
+                                <h6>Home-Type : {{ value[0].type|e }}</h6>
+                                <input type="hidden" value="{{ key|e }}" name="key">
+                                <input placeholder="Enter a quote" id="Price" name="Price" type="number"
+                                       class="validate valid " min="0" size="5">
+                                <button type="submit" class="btn waves-effect waves-yellow blue z-depth-5 call-btn"
+                                        class="secondary-content" formaction="/insertdb" formmethod="get"
+                                        formtarget="_blank">Submit
+                                    <input type="hidden" value="" name="start_key" class="starttiming">
+                                </button>
+                            </li>
+                        </ul>
+                    </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

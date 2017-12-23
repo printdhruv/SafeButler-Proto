@@ -1,0 +1,30 @@
+{
+    "Vincent":[
+                {
+                    "customer": "Vincent Wei",
+                    "address": "17603 NE 30th PL, Redmond, WA, 98052",
+                    "type": "Homeowner"
+                }
+    ],
+    "Dhruv":[
+                {
+                    "customer": "Dhruv",
+                    "address": "Stanford University,P.O BOX 19485",
+                    "type": "Home"
+                }
+    ],
+    "Alex":[
+                {
+                    "customer": "Alex",
+                    "address": "1700 N.1st Street",
+                    "type": "Home"
+                }
+    ],
+    "Facebook":[
+                {
+                    "customer": "Mark",
+                    "address": "1 Hacker Way",
+                    "type": "Business"
+                }
+    ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body class="#263238 blue-grey darken-4 .center-align container z-depth-1">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+</script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js">
+</script>
+<div class="valign-wrapper container" style="width:100%;height:100%;position: absolute;">
+    <div class="valign" style="width:100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 offset-m3">
+                    <div class="card z-depth-5">
+                        <div class="card-content">
+                            <span class="card-title black-text">Sign In</span>
+                            <form action="/login_credentials" name="login_form" method="post">
+                                {{ error }}
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="xyz@xyz.com" id="Email" name="username" type="email"
+                                               class="validate valid ">
+                                        <label for="Email" data-error="Please enter valid E-mail"
+                                               data-sucess="Correct!">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input placeholder="****" id="Password" name="password" type="password"
+                                               class="validate valid">
+                                        <label for="Password">Password</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn waves-effect waves-light blue" formmethod="get">
+                                    Sign In
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>
